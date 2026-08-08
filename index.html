@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#073b8f">
+<title>Akash Cyber Cafe | Digital Visiting Card</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+@keyframes logoFloat{0%,100%{transform:translateY(0) rotate(0deg) scale(1)}50%{transform:translateY(-8px) rotate(1deg) scale(1.025)}}
+@keyframes logoGlow{0%,100%{filter:drop-shadow(0 8px 12px #0004) drop-shadow(0 0 0 rgba(52,168,255,0))}50%{filter:drop-shadow(0 10px 18px #0005) drop-shadow(0 0 22px rgba(73,177,255,.75))}}
+@keyframes ringPulse{0%{transform:scale(.92);opacity:.7}70%{transform:scale(1.18);opacity:0}100%{transform:scale(1.18);opacity:0}}
+@keyframes shine{0%{left:-120%}55%,100%{left:140%}}
+@keyframes gradientMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.hero{position:relative;overflow:hidden;background-size:200% 200%;animation:gradientMove 8s ease infinite}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;background:#fff1;pointer-events:none}
+.hero:before{width:260px;height:260px;right:-90px;top:-120px}
+.hero:after{width:180px;height:180px;left:-80px;bottom:-100px}
+.logo-wrap{position:relative;width:174px;height:174px;margin:0 auto 14px;display:grid;place-items:center}
+.logo-wrap:before{content:"";position:absolute;inset:0;border:2px solid #63c5ff88;border-radius:50%;animation:ringPulse 2.6s ease-out infinite}
+.logo-wrap:after{content:"";position:absolute;inset:7px;border:1px solid #fff5;border-radius:50%}
+.logo{position:relative;z-index:2;width:150px;height:150px;animation:logoFloat 3.8s ease-in-out infinite,logoGlow 3.8s ease-in-out infinite}
+.hero>*{position:relative;z-index:3}
+.section,.trust,.card,.service{animation:fadeUp .7s ease both}
+.action{position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.action:after{content:"";position:absolute;top:0;bottom:0;width:70px;background:linear-gradient(90deg,transparent,#fff7,transparent);transform:skewX(-18deg);left:-120%;animation:shine 4.5s ease-in-out infinite}
+.action:hover{transform:translateY(-4px);box-shadow:0 12px 24px #0003}
+.service{transition:transform .25s,box-shadow .25s,border-color .25s}
+.service:hover{transform:translateY(-6px) scale(1.015);border-color:#8dc6fa}
+
+:root{--blue:#073b8f;--blue2:#0875d1;--light:#f4f8ff;--dark:#102044;--green:#16b94a}
+body{font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#eaf4ff,#f8fbff);color:var(--dark)}
+.container{max-width:900px;margin:auto;background:#fff;min-height:100vh;box-shadow:0 0 30px #0001}
+.hero{background:linear-gradient(135deg,#041f55,#0759a8,#0b86e8,#052b70);color:#fff;padding:30px 22px 28px;text-align:center;border-radius:0 0 28px 28px}
+.logo{width:150px;height:150px;object-fit:contain;display:block;margin:0 auto 14px;filter:drop-shadow(0 8px 12px #0004)}
+h1{font-size:38px;letter-spacing:1px;line-height:1.05}
+.subtitle{font-size:18px;margin:8px 0;font-weight:700;color:#ffd21a}
+.tagline{font-size:16px;font-style:italic}
+.address{margin-top:12px;font-size:16px}
+.actions{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:18px}
+.action{border:0;border-radius:16px;padding:16px 8px;color:white;text-decoration:none;text-align:center;font-weight:bold;box-shadow:0 6px 14px #0002;cursor:pointer}
+.call{background:#0875d1}.whatsapp{background:#16b94a}.location{background:#ef4444}.share{background:#7c3aed}
+.action .icon{font-size:28px;display:block;margin-bottom:6px}.action small{display:block;margin-top:4px;font-weight:normal}
+.section{padding:8px 20px 22px}
+.section-title{display:flex;align-items:center;gap:10px;justify-content:center;margin:8px 0 18px;color:var(--blue);font-size:26px}
+.section-title:before,.section-title:after{content:"";height:2px;background:#b9d4f6;flex:1}
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.service{background:#fff;border-radius:18px;padding:18px 8px;text-align:center;border:1px solid #e2ebf7;box-shadow:0 5px 15px #173b6d12;transition:.2s}
+.service:hover{transform:translateY(-3px);box-shadow:0 8px 20px #173b6d22}
+.service .sicon{font-size:38px;margin-bottom:8px}.service h3{font-size:15px}.service p{font-size:12px;color:#666;margin-top:5px}
+.trust{margin:4px 20px 22px;background:#eef7ff;border:1px solid #cfe4ff;border-radius:20px;padding:20px}
+.trust h2{color:var(--blue);font-size:21px;margin-bottom:8px}.trust p{line-height:1.6;color:#333}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:0 20px 22px}
+.card{background:#fff;border:1px solid #e1eaf5;border-radius:20px;padding:20px;box-shadow:0 5px 15px #173b6d12}
+.card h2{color:var(--blue);font-size:20px;margin-bottom:15px}
+.info{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px dashed #ccd9e9}
+.info:last-child{border-bottom:0}.info b{display:block;margin-bottom:3px}.info span{color:#555;font-size:14px}
+.qr{display:block;width:190px;height:190px;object-fit:cover;margin:8px auto;border:8px solid #fff;box-shadow:0 2px 12px #0002}
+.qrtext{text-align:center;font-weight:bold;color:#555}
+.footer{background:#062a65;color:#fff;text-align:center;padding:24px 15px}
+.social{font-size:28px;margin-bottom:10px}.footer p{margin:5px 0}.footer .yellow{color:#ffd21a;font-weight:bold}
+@media(max-width:700px){
+ h1{font-size:31px}.hero{padding:24px 15px}.logo{width:125px;height:125px}
+ .actions{grid-template-columns:repeat(2,1fr);padding:14px}.services{grid-template-columns:repeat(2,1fr)}
+ .contact-grid{grid-template-columns:1fr;padding:0 14px 18px}.section{padding-left:14px;padding-right:14px}
+}
+@media(max-width:380px){.services{grid-template-columns:1fr 1fr}.action{padding:13px 5px}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="hero">
+  <div class="logo-wrap">
+  <img src="logo.png" alt="Akash Cyber Cafe Logo" class="logo">
+</div>
+  <div style="display:inline-block;background:#ffffff18;border:1px solid #ffffff45;border-radius:999px;padding:7px 15px;margin-bottom:10px;font-size:13px;font-weight:bold;letter-spacing:.5px">✦ PREMIUM DIGITAL SERVICE</div>
+  <h1>AKASH CYBER CAFE</h1>
+  <div class="subtitle">DIGITAL & ONLINE SERVICE CENTER</div>
+  <div class="tagline">Aapka Digital Saathi</div>
+  <div class="address">📍 Hasanpura, Siwan, Bihar</div>
+</header>
+
+<div class="actions">
+  <a class="action call" href="tel:+918298825543"><span class="icon">📞</span>CALL NOW<small>8298825543</small></a>
+  <a class="action whatsapp" href="https://wa.me/918298825543?text=Hello%20Akash%20Cyber%20Cafe" target="_blank"><span class="icon">🟢</span>WHATSAPP<small>Chat Now</small></a>
+  <a class="action location" href="https://www.google.com/maps/search/?api=1&query=Akash%20Cyber%20Cafe%20Hasanpura%20Siwan%20Bihar" target="_blank"><span class="icon">📍</span>LOCATION<small>Get Directions</small></a>
+  <button class="action share" onclick="shareCard()"><span class="icon">📤</span>SHARE CARD<small>Share with Others</small></button>
+</div>
+
+<section class="section">
+  <h2 class="section-title">OUR SERVICES</h2>
+  <div class="services">
+    <div class="service"><div class="sicon">🪪</div><h3>PAN CARD</h3><p>Apply / Update</p></div>
+    <div class="service"><div class="sicon">🆔</div><h3>AADHAAR CARD</h3><p>Apply / Update</p></div>
+    <div class="service"><div class="sicon">📝</div><h3>ONLINE FORM</h3><p>All Types</p></div>
+    <div class="service"><div class="sicon">📄</div><h3>RESUME / BIO-DATA</h3><p>Professional Design</p></div>
+    <div class="service"><div class="sicon">🖨️</div><h3>PRINT & SCAN</h3><p>Color / B&W</p></div>
+    <div class="service"><div class="sicon">📷</div><h3>PHOTO</h3><p>Passport Size</p></div>
+    <div class="service"><div class="sicon">💳</div><h3>BILL PAYMENT</h3><p>All Services</p></div>
+    <div class="service"><div class="sicon">🌐</div><h3>OTHER ONLINE SERVICES</h3><p>Digital Assistance</p></div>
+  </div>
+</section>
+
+<section class="trust">
+  <h2>WHY CHOOSE US?</h2>
+  <p>हमारे यहाँ सभी प्रकार के Digital एवं Online कार्य तेजी, सही जानकारी और भरोसे के साथ किए जाते हैं। आपका विश्वास ही हमारी पहचान है।</p>
+</section>
+
+<div class="contact-grid">
+  <div class="card">
+    <h2>CONTACT US</h2>
+    <div class="info"><div>📞</div><div><b>Mobile</b><span>8298825543</span></div></div>
+    <div class="info"><div>📍</div><div><b>Address</b><span>Hasanpura, Siwan, Bihar - 841226</span></div></div>
+    <div class="info"><div>🕐</div><div><b>Business Hours</b><span>Mon - Sun : 7:00 AM - 8:00 PM</span></div></div>
+  </div>
+
+  <div class="card">
+    <h2>SCAN TO WHATSAPP</h2>
+    <img class="qr" alt="WhatsApp QR Code"
+      src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fwa.me%2F918298825543">
+    <div class="qrtext">Scan & Chat on WhatsApp</div>
+  </div>
+</div>
+
+<div style="margin:0 20px 22px;background:linear-gradient(90deg,#063b8d,#0b75d1);color:#fff;text-align:center;padding:13px;border-radius:18px;font-weight:bold;font-size:18px">
+  ⭐ ALL <span style="color:#ffd21a">DIGITAL & ONLINE</span> SERVICES AVAILABLE ⭐
+</div>
+
+<footer class="footer">
+  <div class="social">● &nbsp; ◎ &nbsp; ▶</div>
+  <p>© 2026 <b>AKASH CYBER CAFE</b></p>
+  <p class="yellow">Thank You for Supporting Local Business ❤️</p>
+</footer>
+</div>
+
+<script>
+function shareCard(){
+  const data={title:"Akash Cyber Cafe",text:"Akash Cyber Cafe - Digital & Online Services, Hasanpura, Siwan, Bihar",url:location.href};
+  if(navigator.share) navigator.share(data);
+  else {navigator.clipboard.writeText(location.href); alert("Website link copied!");}
+}
+</script>
+<a href="https://wa.me/918298825543?text=Hello%20Akash%20Cyber%20Cafe" target="_blank"
+style="position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;background:#16b94a;color:#fff;display:grid;place-items:center;text-decoration:none;font-size:30px;box-shadow:0 10px 25px #0004;z-index:99;animation:logoFloat 2.5s ease-in-out infinite" aria-label="WhatsApp">☘</a>
+</body>
+</html>
